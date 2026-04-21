@@ -337,7 +337,7 @@ setInterval(() => {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`\n✓ IR35 Checker running → http://localhost:${PORT}`);
   console.log(`  Stripe key:    ${process.env.STRIPE_SECRET_KEY ? '✓ set' : '✗ MISSING'}`);
   console.log(`  Anthropic key: ${process.env.ANTHROPIC_API_KEY ? '✓ set' : '✗ MISSING'}`);
