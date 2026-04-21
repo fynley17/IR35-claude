@@ -41,6 +41,7 @@
         padding: 1.25rem 3rem;
         border-bottom: 1px solid var(--border);
         background: rgba(8, 8, 8, 0.9);
+        -webkit-backdrop-filter: blur(12px);
         backdrop-filter: blur(12px);
         position: sticky;
         top: 0;
@@ -112,6 +113,11 @@
             transparent 1px
           );
         background-size: 60px 60px;
+        -webkit-mask-image: radial-gradient(
+          ellipse 70% 70% at 50% 40%,
+          black 20%,
+          transparent 100%
+        );
         mask-image: radial-gradient(
           ellipse 70% 70% at 50% 40%,
           black 20%,

@@ -27,6 +27,7 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), handleWebhoo
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
+app.get('/health', (req, res) => res.status(200).send('OK'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const upload = multer({
