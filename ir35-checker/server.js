@@ -1,4 +1,7 @@
 require('dotenv').config();
+console.log("--- ENV DEBUG ---");
+console.log("Stripe Key starts with:", process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0, 12) : "UNDEFINED");
+console.log("-----------------");
 const express = require('express');
 const multer = require('multer');
 const Stripe = require('stripe');
@@ -127,8 +130,8 @@ app.post('/api/analyze', async (req, res) => {
     const prompt = buildPrompt(pending.contractText, pending.answers);
 
     const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 2500,
+      model: 'claude-sonnet-4-6',
+      max_tokens: 8000,
       messages: [{ role: 'user', content: prompt }]
     });
 
@@ -340,3 +343,5 @@ app.listen(PORT, () => {
   console.log(`  Anthropic key: ${process.env.ANTHROPIC_API_KEY ? '✓ set' : '✗ MISSING'}`);
   console.log(`  Base URL:      ${process.env.BASE_URL || '✗ MISSING'}\n`);
 });
+
+
