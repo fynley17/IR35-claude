@@ -75,6 +75,7 @@ app.post('/api/prepare', upload.single('contract'), async (req, res) => {
 
     const stripeSession = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
+      allow_promotion_codes: true,
       line_items: [{
         price_data: {
           currency: 'gbp',
