@@ -266,6 +266,10 @@
   });
 
   function setFile(f) {
+      if (f.size > 10 * 1024 * 1024) {
+      showError('File is too large. Please use a PDF under 10MB.');
+      return;
+    }
     selectedFile = f;
     uploadZone.classList.add('has-file');
     fileName.style.display = 'block';
