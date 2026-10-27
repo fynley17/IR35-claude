@@ -156,7 +156,7 @@ function build() {
   for (const { file, meta, body } of parsed) {
     const priceDisplay = config.priceLabel;
     // Meta strings may contain {{price}}; resolve them first.
-    const simple = { price: priceDisplay, business: config.business };
+    const simple = { price: priceDisplay, business: config.business, retentionDays: config.reportRetentionDays, unpaidHours: config.unpaidRetentionHours };
     for (const k of ['title', 'description', 'h1']) if (meta[k]) meta[k] = fill(meta[k], simple, {});
     if (meta.faq) meta.faq = meta.faq.map((q) => ({ q: fill(q.q, simple, {}), a: fill(q.a, simple, {}) }));
     const ctx = {
