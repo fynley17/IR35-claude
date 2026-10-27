@@ -1,0 +1,46 @@
+<!--meta {
+  "path": "/report",
+  "noindex": true,
+  "title": "Your IR35 Risk Report | IR35 Checker",
+  "description": "Your IR35 contract risk report."
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="report-page">
+  <div id="state-loading" class="state" aria-live="polite">
+    <div class="spinner" aria-hidden="true"></div>
+    <h1 id="loading-title">Confirming your payment…</h1>
+    <p id="loading-sub">This page updates by itself. Your report is usually ready in 1–3 minutes.</p>
+    <ol class="load-steps">
+      <li id="ls-pay">Confirming payment</li>
+      <li id="ls-read">Reading every clause of your contract</li>
+      <li id="ls-compare">Comparing it with how you work</li>
+      <li id="ls-write">Writing your recommendations</li>
+    </ol>
+    <p class="small muted mt-2 hidden" id="email-note">We'll also email you a link when it's ready, so it's fine to close this page.</p>
+  </div>
+
+  <div id="state-error" class="state hidden" role="alert">
+    <h1 id="error-title">We hit a problem</h1>
+    <p id="error-msg"></p>
+    <div class="cta-row">
+      <button type="button" class="btn btn-primary hidden" id="retry-btn">Try again</button>
+      {{#if business.contactEmail}}<a class="btn btn-ghost" id="support-link" href="mailto:{{business.contactEmail}}">Email support</a>{{/if}}
+    </div>
+    <p class="small muted mt-2">Your reference: <strong id="error-ref">—</strong>. If we can't produce your report, you get a full refund.</p>
+  </div>
+
+  <div id="state-report" class="hidden">
+    <div class="report-head">
+      <p class="eyebrow">IR35 Risk Report</p>
+      <h1 class="page-title">Contract analysis</h1>
+      <p class="meta-line" id="report-meta"></p>
+    </div>
+    <div id="report-body"></div>
+  </div>
+</main>
+{{> footer}}
+<script src="/js/report-render.js?v={{v}}" defer></script>
+<script src="/js/report.js?v={{v}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!--meta { "path": "/dev/fake-checkout", "noindex": true, "title": "Fake checkout (development only)", "description": "Development only." } -->
+{{> head}}
+{{> nav}}
+<main id="main" class="form-page">
+  <h1 class="page-title">Fake checkout</h1>
+  <p class="intro">Development only — FAKE_PAYMENTS=1. In production this is Stripe Checkout.</p>
+  <form method="post" action="/dev/fake-pay" id="fake-form">
+    <input type="hidden" name="id" id="fake-id" />
+    <input type="hidden" name="email" value="" />
+    <button class="btn btn-primary" type="submit">Pay {{price}} (simulated)</button>
+  </form>
+</main>
+<script src="/js/fake-checkout.js" defer></script>
+{{> footer}}
+</body>
+</html>

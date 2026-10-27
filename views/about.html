@@ -1,0 +1,46 @@
+<!--meta {
+  "path": "/about",
+  "priority": "0.6",
+  "title": "About IR35 Checker — How Our IR35 Contract Analysis Works",
+  "description": "Who runs IR35 Checker, how the AI-assisted contract analysis works, the legal framework it applies, and what it can and can't do.",
+  "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "About", "path": "/about" }]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="page">
+  <article class="page-narrow">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>About</li></ol>
+    <h1 class="page-title">About {{business.tradingName}}</h1>
+    <div class="prose">
+      <p>{{business.tradingName}} gives UK contractors a fast, affordable first look at their IR35 risk — based on the contract they've actually been sent and how they'll actually work — so they can negotiate better terms, check a Status Determination Statement, or decide whether they need a specialist.</p>
+      {{#if business.legalName}}<p>{{business.tradingName}} is run by {{business.legalName}}{{#if business.companyNumber}}, a company registered in England and Wales (company number {{business.companyNumber}}){{/if}}.{{#if business.founderName}} It was founded by {{business.founderName}}.{{/if}}</p>{{/if}}
+
+      <h2>Why we built it</h2>
+      <p>A specialist IR35 contract review typically costs £49–£125 or more and takes days. HMRC's free CEST tool is quick but never reads your contract. Most contractors sign somewhere in between — without knowing which of their clauses help them and which hurt. We built {{business.tradingName}} to close that gap.</p>
+
+      <h2>How the analysis works</h2>
+      <ol>
+        <li><strong>We read the whole document.</strong> Your contract (and optional SDS or upstream terms) is passed in full to a large language model from Anthropic — not just the first few pages, and including scanned PDFs.</li>
+        <li><strong>We combine it with your working practices.</strong> Your answers to 12 questions describe the reality of the engagement, which tribunals weigh heavily.</li>
+        <li><strong>We apply a fixed legal framework.</strong> The model is instructed to use the three-stage test from <em>Ready Mixed Concrete</em> (1968), the Supreme Court's guidance on mutuality and control in <em>HMRC v Professional Game Match Officials</em> [2024] UKSC 29, the Court of Appeal's approach to the hypothetical contract in <em>HMRC v Atholl House Productions</em> [2022] EWCA Civ 501, and the principle in <em>Autoclenz v Belcher</em> [2011] UKSC 41 that terms which don't reflect reality can be disregarded.</li>
+        <li><strong>Everything is evidenced.</strong> Each factor cites the clause it relies on, and says so when the contract is silent. Where your answers contradict the contract, we flag it.</li>
+        <li><strong>We never give a verdict.</strong> Reports describe risk and indicators. They never say "inside" or "outside" IR35, because only HMRC or a tribunal can decide that.</li>
+      </ol>
+
+      <h2>What it can't do</h2>
+      <p>It is not a lawyer, a tax adviser or insurance. It relies on the documents and answers you give it, and AI can make mistakes. For high-value engagements, an HMRC enquiry or anything you're unsure about, take your report to a qualified IR35 specialist or accountant — it will make that review quicker.</p>
+
+      <h2>Your data</h2>
+      <p>Your contract is deleted as soon as your report is ready, and the report is deleted after {{retentionDays}} days. Our AI provider does not use your documents to train its models. Read the full <a href="/privacy">privacy notice</a>.</p>
+
+      {{#if business.reviewerName}}<h2>Content review</h2><p>Our guides are reviewed by {{business.reviewerName}}{{#if business.reviewerCredentials}}, {{business.reviewerCredentials}}{{/if}}.</p>{{/if}}
+
+      <h2>Get in touch</h2>
+      <p>Questions, feedback or a problem with a report? <a href="/contact">Contact us</a>.</p>
+    </div>
+    {{> cta}}
+  </article>
+</main>
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!--meta {
+  "path": "/terms",
+  "priority": "0.3",
+  "updated": "2026-10-27",
+  "title": "Terms of Service | IR35 Checker",
+  "description": "The terms that apply when you buy an IR35 Checker contract risk report.",
+  "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Terms", "path": "/terms" }]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="page">
+  <article class="page-narrow">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>Terms</li></ol>
+    <h1 class="page-title">Terms of service</h1>
+    <p class="byline">Last updated 27 October 2026</p>
+    <div class="prose">
+      <h2>1. About us</h2>
+      <p>These terms apply when you use {{business.tradingName}} and buy a report. The service is provided by {{#if business.legalName}}{{business.legalName}}{{else}}{{business.tradingName}}{{/if}}{{#if business.companyNumber}}, a company registered in England and Wales with number {{business.companyNumber}}{{/if}}{{#if business.address}}, of {{business.address}}{{/if}} ("we", "us").{{#if business.contactEmail}} Contact: <a href="mailto:{{business.contactEmail}}">{{business.contactEmail}}</a>.{{/if}}</p>
+
+      <h2>2. What you're buying</h2>
+      <p>A report is an automated, AI-assisted analysis of the documents and answers you provide, describing indicators of IR35 risk and suggesting points to negotiate. The price is shown before you pay ({{price}} at the time of writing) and includes any VAT that applies.</p>
+
+      <h2>3. What a report is not</h2>
+      <p><strong>A report is information, not legal or tax advice, and it does not create an adviser–client relationship.</strong> It cannot decide your IR35 status — only HMRC or a tribunal can — and it is not insurance. It depends entirely on the accuracy and completeness of what you give us, and AI analysis can contain errors. You should not rely on a report alone when making decisions with significant financial consequences; take advice from a qualified IR35 specialist or accountant.</p>
+
+      <h2>4. Your responsibilities</h2>
+      <ul>
+        <li>Give accurate, complete answers.</li>
+        <li>Only upload documents you are entitled to share with us for this purpose. Many contracts contain confidentiality clauses; you are responsible for checking that obtaining a review is permitted.</li>
+        <li>Don't misuse the service, attempt to access other people's reports, or interfere with its operation.</li>
+      </ul>
+
+      <h2>5. Delivery, cancellation and refunds</h2>
+      <p>Your report is normally delivered within minutes of payment. Because it is digital content supplied immediately at your request, if you are a consumer you agree, when you tick the box at checkout, that supply starts straight away and that you lose your 14-day right to cancel once the report has been generated (Consumer Contracts Regulations 2013).</p>
+      <p>This does not affect your statutory rights. If we cannot produce your report, or it is faulty — for example it is incomplete, unreadable or clearly analyses the wrong document — contact us with your reference and we will fix it or refund you in full.</p>
+
+      <h2>6. Our liability</h2>
+      <p>Nothing in these terms limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot be limited by law.</p>
+      <p><strong>If you buy as a business</strong> (including through your limited company): we are not liable for any tax, National Insurance, interest or penalties, loss of contracts, income, profit or business, or any indirect loss, and our total liability arising from a report is limited to the price you paid for it.</p>
+      <p><strong>If you are a consumer</strong>: we are responsible for foreseeable loss caused by our breach of these terms or our failure to use reasonable care and skill, but not for loss that was not foreseeable, and we do not supply the service for business purposes.</p>
+
+      <h2>7. Your report</h2>
+      <p>You may use, copy and share your report for your own purposes, for example with your accountant, agency or client. Reports are available online for {{retentionDays}} days and then deleted; please download the PDF if you want to keep a copy. Everything else on this website belongs to us.</p>
+
+      <h2>8. Privacy</h2>
+      <p>Our <a href="/privacy">privacy notice</a> explains how we handle your data.</p>
+
+      <h2>9. Changes and general</h2>
+      <p>We may update these terms; the version on the website when you buy applies to that purchase. If any part of these terms is found unenforceable, the rest still applies. These terms are governed by the law of England and Wales. If you are a consumer living elsewhere in the UK, you may also bring proceedings in your local courts.</p>
+    </div>
+  </article>
+</main>
+{{> footer}}
+</body>
+</html>

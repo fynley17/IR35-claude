@@ -1,0 +1,48 @@
+<!--meta {
+  "path": "/free-ir35-check",
+  "priority": "0.9",
+  "title": "Free IR35 Checker 2026/27 — Working Practices Risk Score | IR35 Checker",
+  "description": "Free IR35 check: answer 12 questions about how you work and get an instant indicative risk score for each IR35 factor, plus who is responsible for your status under the 2026/27 rules.",
+  "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Free IR35 check", "path": "/free-ir35-check" }],
+  "faq": [
+    { "q": "Is this free IR35 check accurate?", "a": "It gives an indicative score based only on your answers about working practices. It does not read your contract, which often contains clauses that help or hurt your position. For a contract-based analysis, use the full report." },
+    { "q": "Is my data saved?", "a": "No. The free check runs entirely in your browser and nothing is sent to us." }
+  ]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="form-page">
+  <ol class="crumbs"><li><a href="/">Home</a></li><li>Free IR35 check</li></ol>
+  <h1 class="page-title">Free IR35 check <em>for 2026/27.</em></h1>
+  <p class="intro">Answer 12 questions about how you actually work to get an instant, indicative risk score for each IR35 factor — and find out who is responsible for deciding your status. It runs in your browser; nothing is sent to us.</p>
+  <form id="free-form" novalidate>
+    <div id="questions"></div>
+    <button type="submit" class="btn btn-primary btn-block">See my free result →</button>
+    <p class="submit-note" id="free-missing"></p>
+  </form>
+
+  <section id="free-result" class="result-card hidden" aria-live="polite">
+    <p class="eyebrow">Your indicative result</p>
+    <h2 class="h2" id="free-headline"></h2>
+    <p class="muted" id="free-summary"></p>
+    <ul class="result-bars" id="free-bars"></ul>
+    <div class="info-box"><h2>Who decides your status</h2><p id="free-who"></p></div>
+    <div class="callout">
+      <h3>Your contract matters as much as your answers</h3>
+      <p>This score ignores your contract. Clauses on substitution, control, additional services and termination can move your risk a long way either way. Get a clause-by-clause report with suggested wording for {{price}} — your answers are carried over.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="/check">Analyse my contract — {{price}} →</a><a class="btn btn-ghost" href="/sample-report">See a sample report</a></div>
+    </div>
+    <p class="note mt-2">Indicative only, based on your answers. It is not legal or tax advice and cannot decide your IR35 status.</p>
+  </section>
+
+  <section class="prose mt-3">
+    <h2>How the free IR35 check works</h2>
+    <p>Each answer is weighted by how strongly it points towards or away from employment, using the same factors the courts use: personal service and substitution, control, mutuality of obligation, financial risk, being part and parcel of the client's organisation, equipment, being in business on your own account, and the termination terms. Mutuality of obligation is treated as present in most engagements, following the Supreme Court's 2024 decision in <a href="/guides/mutuality-of-obligation-pgmol">HMRC v PGMOL</a>.</p>
+    <p>No single factor decides IR35. Tribunals weigh the whole picture, and contract terms that don't reflect reality can be ignored — which is why the full report compares your contract with your answers.</p>
+  </section>
+</main>
+{{> footer}}
+<script src="/js/questions.js?v={{v}}" defer></script>
+<script src="/js/free-check.js?v={{v}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo">{{business.tradingName}}</a>
+        <p class="small muted">An AI-assisted IR35 contract risk report for UK contractors, in minutes, for {{price}}. Information only — not legal or tax advice.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/check">Check my contract</a></li>
+          <li><a href="/sample-report">Sample report</a></li>
+          <li><a href="/free-ir35-check">Free IR35 check</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="/guides/ir35-small-company-threshold-2026">Small company threshold 2026</a></li>
+          <li><a href="/guides/ir35-substitution-clause">Substitution clauses</a></li>
+          <li><a href="/guides/challenge-status-determination-statement">Challenging an SDS</a></li>
+          <li><a href="/guides">All guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© {{year}} {{#if business.legalName}}{{business.legalName}}{{else}}{{business.tradingName}}{{/if}}{{#if business.legalName}} trading as {{business.tradingName}}{{/if}}.{{#if business.companyNumber}} Registered in England and Wales, company number {{business.companyNumber}}.{{/if}}{{#if business.address}} Registered office: {{business.address}}.{{/if}}</span>
+      <span>{{#if business.icoNumber}}ICO registration {{business.icoNumber}}. {{/if}}{{#if business.vatNumber}}VAT {{business.vatNumber}}. {{/if}}{{#if business.contactEmail}}<a href="mailto:{{business.contactEmail}}">{{business.contactEmail}}</a>{{/if}}</span>
+      <span>Reports are an automated, AI-assisted analysis for information only and are not legal or tax advice. Only HMRC or a tribunal can decide IR35 status.</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/site.js?v={{v}}" defer></script>

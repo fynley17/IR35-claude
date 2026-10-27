@@ -1,0 +1,172 @@
+<!--meta {
+  "path": "/",
+  "type": "home",
+  "priority": "1.0",
+  "title": "IR35 Contract Review in Minutes — AI Risk Report for {{price}} | IR35 Checker",
+  "description": "Upload your contract, answer 12 questions about how you really work, and get a clause-by-clause IR35 risk report with suggested wording to negotiate. {{price}}, usually ready in 1–3 minutes.",
+  "faq": [
+    { "q": "Does this tell me if I'm inside or outside IR35?", "a": "No tool can decide your status — only HMRC or a tribunal can. Your report gives a risk score from 1 to 10, explains which factors point which way and why, and tells you what to change. That is the information you need to negotiate, check a Status Determination Statement or decide whether to pay for a specialist review." },
+    { "q": "Who decides my IR35 status?", "a": "It depends on the client. If the end client is a small private-sector company, your own limited company decides. If it is medium or large, or in the public sector, the client decides and must give you a Status Determination Statement (SDS) with its reasons. From the 2026/27 tax year a company is small if it meets two of: turnover up to £15m, balance sheet up to £7.5m, 50 or fewer employees." },
+    { "q": "What happens to my contract?", "a": "Your contract is sent securely to our AI provider to produce the report and is deleted from our systems as soon as the report is ready. The report itself is kept for {{retentionDays}} days so you can come back to it, then deleted. We never use your contract for marketing or to train AI models." },
+    { "q": "How is this different from HMRC's CEST tool?", "a": "CEST asks questions but never reads your contract. IR35 Checker reads the actual clauses, compares them with how you work in practice, flags contradictions and suggests replacement wording. Many contractors use both." },
+    { "q": "Is a {{price}} AI report as good as a specialist review?", "a": "It is not a substitute for a specialist when the stakes are high or you are under HMRC enquiry. It is a fast, low-cost first check: it shows you which clauses matter, so a specialist review (if you need one) is quicker and you go into negotiations prepared." },
+    { "q": "Can I expense it through my limited company?", "a": "Usually, yes — a contract review for your business is normally an allowable business expense. You receive a Stripe receipt by email. Check with your accountant if you're unsure." },
+    { "q": "What if something goes wrong?", "a": "If we can't produce your report, we'll refund you in full. Just reply to your receipt email or contact us with your report reference." }
+  ]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow rise">IR35 contract review · {{price}} · ready in minutes</span>
+        <h1 class="display rise rise-2">Know your IR35 risk <em>before you sign.</em></h1>
+        <p class="lead rise rise-3">Upload your contract and answer 12 quick questions about how you'll actually work. You get a <strong>clause-by-clause risk report</strong> that shows what points inside or outside IR35, where the paperwork contradicts reality, and the wording to ask your agency for.</p>
+        <div class="cta-row rise rise-4">
+          <a href="/check" class="btn btn-primary">Check my contract — {{price}} →</a>
+          <a href="/sample-report" class="btn btn-ghost">See a sample report</a>
+        </div>
+        <ul class="trust-row rise rise-4" aria-label="Key features">
+          <li>Reads the whole contract</li>
+          <li>8 IR35 factors · updated for 2026/27</li>
+          <li>Suggested clause wording</li>
+          <li>Contract deleted after analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <p class="section-tag">How it works</p>
+      <ol class="steps">
+        <li class="step"><span class="step-num">01</span><h3>Upload your contract</h3><p>The PDF or Word file you've been sent — including scanned copies. Add your SDS or the upstream terms too if you have them.</p></li>
+        <li class="step"><span class="step-num">02</span><h3>Answer 12 questions</h3><p>How you'll really work day to day. HMRC and the tribunals look at reality, not just the paperwork.</p></li>
+        <li class="step"><span class="step-num">03</span><h3>Pay {{price}} securely</h3><p>Card, Apple Pay or Google Pay via Stripe. A receipt for your limited company is emailed to you.</p></li>
+        <li class="step"><span class="step-num">04</span><h3>Get your report</h3><p>Usually ready in 1–3 minutes, on screen and as a PDF, with a link emailed to you for {{retentionDays}} days.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="section-tag">What you get</p>
+        <h2 class="h2">More than a <em>yes or no.</em> A risk breakdown you can act on.</h2>
+        <ul class="features">
+          <li><span class="tick"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#E8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Every IR35 factor, with clause references</strong>Substitution, control, mutuality of obligation, financial risk, part and parcel, equipment, being in business on your own account, and termination terms.</div></li>
+          <li><span class="tick"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#E8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Contract vs. reality</strong>We flag where the clauses say one thing and your working practices say another — the gap HMRC looks for first.</div></li>
+          <li><span class="tick"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#E8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Suggested wording to negotiate</strong>Balanced replacement clauses you can send to your agency, with a plain-English reason for each.</div></li>
+          <li><span class="tick"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#E8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Who decides, and what to do about an SDS</strong>Tailored to whether your client is small, medium/large or public sector — including how to challenge a Status Determination Statement.</div></li>
+          <li><span class="tick"><svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><polyline points="1,5 4,8 9,2" stroke="#E8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>Downloadable PDF</strong>Share it with your accountant or keep it on file as evidence you took reasonable care.</div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mock-report" aria-label="Example report summary">
+          <div class="mock-header"><span>IR35 Risk Report</span><span class="badge badge-amber">MEDIUM RISK · 6/10</span></div>
+          <div class="mock-row"><span class="mock-label">Personal service &amp; substitution</span><span class="t-amber">⚠ Warning</span></div>
+          <div class="mock-row"><span class="mock-label">Control</span><span class="t-red">✗ Red flag</span></div>
+          <div class="mock-row"><span class="mock-label">Mutuality of obligation</span><span class="t-amber">⚠ Warning</span></div>
+          <div class="mock-row"><span class="mock-label">Financial risk</span><span class="t-amber">⚠ Warning</span></div>
+          <div class="mock-row"><span class="mock-label">Part and parcel</span><span class="t-red">✗ Red flag</span></div>
+          <div class="mock-row"><span class="mock-label">Equipment</span><span class="t-green">✓ Positive</span></div>
+          <div class="mock-row"><span class="mock-label">In business on own account</span><span class="t-green">✓ Positive</span></div>
+          <div class="mock-row"><span class="mock-label">Termination &amp; other terms</span><span class="t-amber">⚠ Warning</span></div>
+          <div class="mock-foot"><a href="/sample-report">Read the full sample report →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="section-tag">How it compares</p>
+      <h2 class="h2">The fast first check — <em>before</em> you pay for more.</h2>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead><tr><th scope="col"></th><th scope="col" class="us">IR35 Checker</th><th scope="col">HMRC CEST tool</th><th scope="col">Specialist contract review</th></tr></thead>
+          <tbody>
+            <tr><td>Price</td><td class="us">{{price}}</td><td>Free</td><td>Typically £49–£125+</td></tr>
+            <tr><td>Reads your actual contract</td><td class="us">Yes — every clause</td><td>No — questions only</td><td>Yes</td></tr>
+            <tr><td>Working practices</td><td class="us">Yes — compared with the contract</td><td>Yes</td><td>Often an extra service</td></tr>
+            <tr><td>Suggested replacement wording</td><td class="us">Yes</td><td>No</td><td>Usually</td></tr>
+            <tr><td>Turnaround</td><td class="us">Usually 1–3 minutes</td><td>Minutes</td><td>Typically 1–5 working days</td></tr>
+            <tr><td>Human expert opinion</td><td class="us">No — AI-assisted</td><td>No</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted mt-1">Specialist pricing based on published UK prices for IR35 contract reviews in 2026. If you are facing an HMRC enquiry or a high-value engagement, use a specialist as well.</p>
+    </div>
+  </section>
+
+  <section class="section" id="who-decides">
+    <div class="wrap split">
+      <div>
+        <p class="section-tag">New for 2026/27</p>
+        <h2 class="h2">More clients are now <em>“small”</em> — so IR35 may be your call again.</h2>
+        <p class="muted">For the 2026/27 tax year, the small company thresholds are £15m turnover and £7.5m balance sheet — up from £10.2m and £5.1m (50 employees is unchanged). If your client now meets two of the three, <strong>your own limited company</strong> is responsible for deciding your status — not the client.</p>
+        <div class="cta-row mt-2"><a class="btn btn-ghost" href="/guides/ir35-small-company-threshold-2026">Read the threshold guide</a></div>
+      </div>
+      <div>
+        <div class="mock-report">
+          <div class="mock-row"><span class="mock-label">Small private client</span><span>You decide (Chapter 8)</span></div>
+          <div class="mock-row"><span class="mock-label">Medium / large private client</span><span>Client decides · SDS</span></div>
+          <div class="mock-row"><span class="mock-label">Public sector</span><span>Client decides · SDS</span></div>
+          <div class="mock-foot small muted">Not sure? Our <a href="/free-ir35-check">free check</a> tells you who's responsible.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <p class="section-tag">Pricing</p>
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <p class="price">{{price}}</p>
+          <p class="price-desc">per report · no subscription · usually expensable through your Ltd</p>
+        </div>
+        <ul class="pricing-list">
+          <li>Whole contract read — PDF, scanned PDF or Word</li>
+          <li>Optional SDS or upstream terms reviewed too</li>
+          <li>All 8 IR35 factors with clause references</li>
+          <li>Contract vs. working reality comparison</li>
+          <li>Red flags, positives and suggested wording</li>
+          <li>On-screen report, PDF download and email link</li>
+        </ul>
+        <div class="pricing-foot">
+          <a href="/check" class="btn btn-primary btn-block">Check my contract →</a>
+          <p class="guarantee">If we can't produce your report, you get a full refund.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <p class="section-tag">Questions</p>
+      <div class="faq">
+        <details><summary>Does this tell me if I'm inside or outside IR35?</summary><p>No tool can decide your status — only HMRC or a tribunal can. Your report gives a risk score from 1 to 10, explains which factors point which way and why, and tells you what to change. That is the information you need to negotiate, check a Status Determination Statement or decide whether to pay for a specialist review.</p></details>
+        <details><summary>Who decides my IR35 status?</summary><p>It depends on the client. If the end client is a small private-sector company, your own limited company decides. If it is medium or large, or in the public sector, the client decides and must give you a Status Determination Statement (SDS) with its reasons. From the 2026/27 tax year a company is small if it meets two of: turnover up to £15m, balance sheet up to £7.5m, 50 or fewer employees.</p></details>
+        <details><summary>What happens to my contract?</summary><p>Your contract is sent securely to our AI provider to produce the report and is deleted from our systems as soon as the report is ready. The report itself is kept for {{retentionDays}} days so you can come back to it, then deleted. We never use your contract for marketing or to train AI models. Full details are in our <a href="/privacy">privacy notice</a>.</p></details>
+        <details><summary>How is this different from HMRC's CEST tool?</summary><p>CEST asks questions but never reads your contract. IR35 Checker reads the actual clauses, compares them with how you work in practice, flags contradictions and suggests replacement wording. Many contractors use both.</p></details>
+        <details><summary>Is a {{price}} AI report as good as a specialist review?</summary><p>It is not a substitute for a specialist when the stakes are high or you are under HMRC enquiry. It is a fast, low-cost first check: it shows you which clauses matter, so a specialist review (if you need one) is quicker and you go into negotiations prepared.</p></details>
+        <details><summary>Can I expense it through my limited company?</summary><p>Usually, yes — a contract review for your business is normally an allowable business expense. You receive a Stripe receipt by email. Check with your accountant if you're unsure.</p></details>
+        <details><summary>What if something goes wrong?</summary><p>If we can't produce your report, we'll refund you in full. Just reply to your receipt email or <a href="/contact">contact us</a> with your report reference.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="section-tag">IR35 guides</p>
+      <div class="guide-grid">{{{guideCards}}}</div>
+    </div>
+  </section>
+</main>
+{{> disclaimer}}
+{{> footer}}
+</body>
+</html>

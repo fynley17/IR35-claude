@@ -1,0 +1,32 @@
+<!--meta {
+  "path": "/contact",
+  "priority": "0.4",
+  "title": "Contact IR35 Checker — Support, Refunds and Questions",
+  "description": "Contact IR35 Checker for help with a report, a refund, a data request or a general question.",
+  "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Contact", "path": "/contact" }]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="page">
+  <article class="page-narrow">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>Contact</li></ol>
+    <h1 class="page-title">Contact us</h1>
+    <div class="prose">
+      {{#if business.contactEmail}}
+      <p>Email <a href="mailto:{{business.contactEmail}}"><strong>{{business.contactEmail}}</strong></a> — or simply reply to your receipt or report email. We aim to reply within one working day.</p>
+      {{else}}
+      <p>Reply to your receipt or report email and we'll get back to you, usually within one working day.</p>
+      {{/if}}
+      <h2>Problem with a report?</h2>
+      <p>Include your <strong>report reference</strong> (the 8 characters shown on your report page and in your email). If we can't produce your report, or it's clearly gone wrong, we'll fix it or refund you in full.</p>
+      <h2>Your data</h2>
+      <p>To ask for a copy of your data or for it to be deleted early, email us from the address you used at checkout. See the <a href="/privacy">privacy notice</a> for details.</p>
+      <h2>We can't give individual advice</h2>
+      <p>We're not able to advise on your specific IR35 position by email. For personal advice, speak to a qualified IR35 specialist or accountant.</p>
+      {{#if business.address}}<h2>Postal address</h2><p>{{#if business.legalName}}{{business.legalName}}<br />{{/if}}{{business.address}}</p>{{/if}}
+    </div>
+  </article>
+</main>
+{{> footer}}
+</body>
+</html>

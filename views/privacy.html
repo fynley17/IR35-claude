@@ -1,0 +1,74 @@
+<!--meta {
+  "path": "/privacy",
+  "priority": "0.3",
+  "updated": "2026-10-27",
+  "title": "Privacy Notice | IR35 Checker",
+  "description": "How IR35 Checker collects, uses, stores and deletes your contract, answers and payment details under UK GDPR.",
+  "breadcrumb": [{ "name": "Home", "path": "/" }, { "name": "Privacy", "path": "/privacy" }]
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="page">
+  <article class="page-narrow">
+    <ol class="crumbs"><li><a href="/">Home</a></li><li>Privacy</li></ol>
+    <h1 class="page-title">Privacy notice</h1>
+    <p class="byline">Last updated 27 October 2026</p>
+    <div class="prose">
+      <h2>Who we are</h2>
+      <p>{{#if business.legalName}}{{business.legalName}}{{else}}{{business.tradingName}}{{/if}}{{#if business.legalName}} (trading as {{business.tradingName}}){{/if}} is the data controller for personal data processed through this website.{{#if business.address}} Our address is {{business.address}}.{{/if}}{{#if business.contactEmail}} You can contact us about privacy at <a href="mailto:{{business.contactEmail}}">{{business.contactEmail}}</a>.{{/if}}{{#if business.icoNumber}} We are registered with the Information Commissioner's Office (registration {{business.icoNumber}}).{{/if}}</p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li><strong>Documents you upload</strong> — your contract and any optional supporting document. These usually contain personal data about you and possibly others (names, addresses, rates, signatures).</li>
+        <li><strong>Your answers and notes</strong> about how you work.</li>
+        <li><strong>Payment and contact details</strong> — your email address, name and billing details are collected by Stripe at checkout. We receive your email address and the payment status; we never see or store your full card number.</li>
+        <li><strong>Technical data</strong> — such as IP address and browser information in server logs kept by our hosting provider, used for security and to prevent abuse.</li>
+      </ul>
+
+      <h2>How we use it, and our lawful basis</h2>
+      <table>
+        <thead><tr><th>Purpose</th><th>Lawful basis (UK GDPR)</th></tr></thead>
+        <tbody>
+          <tr><td>Analysing your documents and answers and producing your report</td><td>Performance of a contract with you</td></tr>
+          <tr><td>Emailing you a link to your report and service messages</td><td>Performance of a contract with you</td></tr>
+          <tr><td>Taking payment and keeping accounting records</td><td>Contract and legal obligation</td></tr>
+          <tr><td>Keeping the service secure and preventing fraud or abuse</td><td>Our legitimate interests</td></tr>
+        </tbody>
+      </table>
+      <p>We do not sell your data, use it for advertising, or use your documents to train AI models. Your report is generated automatically, but it does not make any decision about you that has legal or similarly significant effects.</p>
+
+      <h2>Who we share it with</h2>
+      <p>We use these service providers (processors), who act only on our instructions:</p>
+      <ul>
+        <li><strong>Anthropic</strong> — provides the AI model that analyses your documents. Under its commercial terms it does not train its models on our customers' content, and it keeps API data only for a limited period.</li>
+        <li><strong>Stripe</strong> — processes payments.</li>
+        <li><strong>Vercel</strong> — hosts the website and application.</li>
+        <li><strong>Our database provider</strong> — stores your report and, briefly, your uploaded documents.</li>
+        <li><strong>Our email provider</strong> — sends your report link.</li>
+      </ul>
+      <p>Some of these providers process data outside the UK, including in the United States. Where they do, we rely on appropriate safeguards recognised under UK law, such as the UK International Data Transfer Addendum or the UK Extension to the EU–US Data Privacy Framework.</p>
+
+      <h2>How long we keep it</h2>
+      <ul>
+        <li><strong>Uploaded documents</strong> — deleted as soon as your report has been generated. If you don't complete payment they are deleted within {{unpaidHours}} hours; if a paid report can't be produced, within {{retentionDays}} days.</li>
+        <li><strong>Your report and answers</strong> — deleted {{retentionDays}} days after you created the report. Download the PDF if you want to keep it.</li>
+        <li><strong>Payment records</strong> — kept by us and Stripe for as long as the law requires for tax and accounting purposes (normally six years).</li>
+      </ul>
+
+      <h2>Cookies and browser storage</h2>
+      <p>We don't use advertising or tracking cookies. While you fill in the form, your answers are kept in your own browser's session storage so they aren't lost if you cancel payment; this never leaves your device until you submit. Stripe sets its own cookies on its checkout page to process payment and prevent fraud.{{#if plausible}} We use Plausible Analytics, which counts visits without cookies and without collecting personal data.{{/if}}</p>
+
+      <h2>Security</h2>
+      <p>Everything is sent over HTTPS. Report links contain a long random code that can't be guessed — but anyone with the link can view the report, so only share it with people you trust, such as your accountant.</p>
+
+      <h2>Your rights</h2>
+      <p>You have the right to access your data, to have it corrected or deleted, to restrict or object to its use, and to data portability. To use these rights, contact us from the email address you used at checkout. You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" rel="noopener">ico.org.uk</a> or on 0303 123 1113 — but we'd appreciate the chance to put things right first.</p>
+
+      <h2>Changes</h2>
+      <p>We'll update this notice if how we use data changes, and show the date at the top.</p>
+    </div>
+  </article>
+</main>
+{{> footer}}
+</body>
+</html>

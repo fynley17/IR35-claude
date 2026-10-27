@@ -1,0 +1,70 @@
+<!--meta {
+  "path": "/check",
+  "priority": "0.8",
+  "title": "Check My Contract for IR35 — Upload & Get Your Report | IR35 Checker",
+  "description": "Upload your contract (PDF or Word), answer 12 questions about your working practices and get a clause-by-clause IR35 risk report in minutes for {{price}}."
+} -->
+{{> head}}
+{{> nav}}
+<main id="main" class="form-page">
+  <p class="stepper"><span class="on">1. Upload &amp; answer</span><span>→</span><span>2. Pay {{price}}</span><span>→</span><span>3. Your report</span></p>
+  <h1 class="page-title">Check your <em>contract.</em></h1>
+  <p class="intro">Upload your contract and answer the questions about how you'll actually work. Both matter — HMRC and the tribunals look at working reality, not just what's written down. It takes about three minutes.</p>
+
+  <div class="alert alert-error hidden" id="error-banner" role="alert"></div>
+  <div class="alert alert-info hidden" id="info-banner" role="status"></div>
+
+  <form id="check-form" novalidate>
+    <section class="field-group">
+      <h2>Your contract</h2>
+      <p>The contract between your limited company and the agency or client. PDF (including scanned) or Word .docx, up to 4 MB.</p>
+      <div class="upload-zone" id="zone-contract">
+        <input type="file" id="file-contract" name="contract" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="hint-contract" />
+        <p class="upload-title">Drop your contract here</p>
+        <p class="upload-hint" id="hint-contract">or tap to choose a file · PDF or .docx · max 4 MB</p>
+        <p class="upload-name hidden" id="name-contract"></p>
+      </div>
+    </section>
+
+    <section class="field-group">
+      <h2>Supporting document <span class="optional">Optional</span></h2>
+      <p>Your Status Determination Statement (SDS) or the agency's terms with the client, if you have them. They make the report more accurate.</p>
+      <div class="upload-zone small" id="zone-supporting">
+        <input type="file" id="file-supporting" name="supporting" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+        <p class="upload-hint">Add an SDS or upstream contract · PDF or .docx</p>
+        <p class="upload-name hidden" id="name-supporting"></p>
+      </div>
+    </section>
+
+    <section class="field-group">
+      <h2>How you'll actually work — 12 questions</h2>
+      <p>Answer based on reality, not on what the contract says.</p>
+      <div id="questions"></div>
+      <fieldset class="question">
+        <legend><span class="q-num">13 —</span><span>Anything else we should know? <span class="optional">Optional</span></span></legend>
+        <textarea class="input" id="notes" name="notes" maxlength="1500" placeholder="For example: I manage two of the client's employees; or the client has agreed to a substitute in writing."></textarea>
+        <p class="counter"><span id="notes-count">0</span>/1500</p>
+      </fieldset>
+    </section>
+
+    <div class="submit-area">
+      <div class="summary-row">
+        <span class="muted small">IR35 Contract Risk Report · secure payment via Stripe</span>
+        <span class="price-sm">{{price}}</span>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="consent" />
+        <span>I want my report straight away. I understand that once it has been generated I lose my 14-day right to cancel, and that the report is AI-assisted information, not legal or tax advice. I agree to the <a href="/terms" target="_blank" rel="noopener">terms</a> and <a href="/privacy" target="_blank" rel="noopener">privacy notice</a>.</span>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block" id="submit-btn" disabled>Continue to payment →</button>
+      <p class="progress-note hidden" id="progress-note" aria-live="polite"></p>
+      <p class="submit-note" id="missing-note">Upload your contract and answer every question to continue.</p>
+      <p class="submit-note">You'll pay on Stripe's secure page. Your contract is deleted as soon as your report is ready. If we can't produce your report, you get a full refund.</p>
+    </div>
+  </form>
+</main>
+{{> footer}}
+<script src="/js/questions.js?v={{v}}" defer></script>
+<script src="/js/check.js?v={{v}}" defer></script>
+</body>
+</html>
